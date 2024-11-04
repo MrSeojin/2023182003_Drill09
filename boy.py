@@ -118,7 +118,7 @@ class Boy:
         self.state_machine.draw()
 
     def fire_ball(self):
-        print('FIRED BALL')
-        ball = Ball()
-        game_world.add_object(ball)
+        #print('FIRED BALL')
+        ball = Ball(self.x, self.y, self.face_dir*10)
+        game_world.add_object(ball, 1)
 

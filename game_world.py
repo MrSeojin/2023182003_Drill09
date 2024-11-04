@@ -1,15 +1,29 @@
-world = []
+# world[] -> 단일 게층 구조
 
-def add_object(o):
-    world.append(o)
+# world[0] -> background 먼저 출력
+# world[1] -> 나중 출력
+world = [[], []]
+
+def add_object(o, depth = 0):
+    world[depth].append(o)
+
+def add_objects(ol, depth = 0):
+    world[depth] += ol
+
 
 def update():
-    for o in world:
-        o.update()
+    for layer in world:
+        for o in layer:
+            o.update()
 
 def render():
-    for o in world:
-        o.draw()
+    for layer in world:
+        for o in layer:
+            o.draw()
 
 def remove_object(o):
-    world.remove(o)
+    for layer in world:
+        if o in layer:
+            layer.remove(o)
+            return 
+    raise ValueError('Cannot delete non existing object')
