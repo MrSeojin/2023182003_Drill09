@@ -2,7 +2,7 @@
 
 # world[0] -> background 먼저 출력
 # world[1] -> 나중 출력
-world = [[], []]
+world = [[], [], []]
 
 def add_object(o, depth = 0):
     world[depth].append(o)
@@ -25,5 +25,5 @@ def remove_object(o):
     for layer in world:
         if o in layer:
             layer.remove(o)
-            return 
+            return
     raise ValueError('Cannot delete non existing object')
