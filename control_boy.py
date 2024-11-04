@@ -1,3 +1,4 @@
+# 2023182003 김서진
 from pico2d import *
 
 import game_world
@@ -50,7 +51,6 @@ def render_world():
     clear_canvas()
     game_world.render()
     update_canvas()
-
 
 open_canvas()
 reset_world()
